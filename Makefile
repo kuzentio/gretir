@@ -27,3 +27,6 @@ bash:
 
 logs:
 	docker logs $(WEB_CONTAINER_ID) -f
+
+run:
+	docker-compose run --service-ports web

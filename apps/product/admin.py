@@ -15,4 +15,4 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Ticket)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', ]
+    list_display = ['product', 'price']
