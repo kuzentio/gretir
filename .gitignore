@@ -305,8 +305,8 @@ pip-selfcheck.json
 config/static/
 .notes
 
-gbot-trader/
 frontend/
+media/
 
 /db
 /bots-logs
