@@ -25,7 +25,7 @@ RUN mkdir /gretir
 WORKDIR /gretir
 ADD . .
 
-RUN pip3 install --upgrade pip
-RUN pip3 install -r requirements/base.txt
+RUN pip install --upgrade pip
+RUN pip install -r requirements/base.txt
 
 EXPOSE 8088
