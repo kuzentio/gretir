@@ -14,10 +14,6 @@ RUN apt-get install -y -q --no-install-recommends \
         libssl-dev \
         python \
         rsync \
-        software-properties-common \
-        devscripts \
-        autoconf \
-        ssl-cert \
     && apt-get clean
 
 
@@ -26,6 +22,6 @@ WORKDIR /gretir
 ADD . .
 
 RUN pip install --upgrade pip
-RUN pip install -r requirements/base.txt
+RUN pip install -r requirements/local.txt
 
 EXPOSE 8088
