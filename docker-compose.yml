@@ -21,9 +21,7 @@ services:
     command: >
       sh -c "
         pip install -r requirements/local.txt &&
-        python manage.py collectstatic --noinput
-        python manage.py migrate
-        python manage.py runserver 0.0.0.0:8088
+         python manage.py runserver 0.0.0.0:8088
       "
     environment:
       - HOST_PWD=${PWD}

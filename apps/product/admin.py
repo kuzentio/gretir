@@ -5,16 +5,9 @@ from apps.product.models import Product, Price, Ticket
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
+    fields = ('name', 'thumb', 'slug')
+    readonly_fields = ('slug', )
     list_display = ('name', )
-
-    # readonly_fields = ('slug',)
-    prepopulated_fields = {"slug": ('name', )}
-
-    def get_readonly_fields(self, request, obj=None):
-        if obj:
-            return ['slug']
-        else:
-            return []
 
 
 @admin.register(Price)

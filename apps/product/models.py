@@ -2,6 +2,7 @@ import uuid
 
 from django.db import models
 from django.utils.text import slugify
+from autoslug import AutoSlugField
 
 
 def product_directory_path(instance, filename):
@@ -10,7 +11,7 @@ def product_directory_path(instance, filename):
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
-    slug = models.SlugField()
+    slug = AutoSlugField(populate_from='name', unique=True)
     thumb = models.ImageField(blank=True, upload_to=product_directory_path)
 
     def save(self, force_insert=False, force_update=False, using=None,
