@@ -5,14 +5,16 @@ from apps.product.models import Product, Price, Ticket
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', ]
+    fields = ('name', 'thumb', 'slug')
+    readonly_fields = ('slug', )
+    list_display = ('name', )
 
 
 @admin.register(Price)
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ['value', 'created_at']
+class PriceAdmin(admin.ModelAdmin):
+    list_display = ('product', 'value', 'created_at')
 
 
 @admin.register(Ticket)
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', ]
+class TicketAdmin(admin.ModelAdmin):
+    list_display = ('product', 'price')

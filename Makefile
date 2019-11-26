@@ -17,13 +17,16 @@ destroy:
 	docker-compose -f docker-compose.yml rm -f -s -v
 
 test:
-	docker-compose -f docker-compose.yml exec web python manage.py test
+	docker-compose -f docker-compose.yml exec gretir_web python manage.py test
 
 shell_plus:
-	docker-compose -f docker-compose.yml exec web python manage.py shell_plus
+	docker-compose -f docker-compose.yml exec gretir_web python manage.py shell_plus
 
 bash:
 	docker-compose -f docker-compose.yml exec web bash
 
 logs:
 	docker logs $(WEB_CONTAINER_ID) -f
+
+run:
+	docker-compose run --name gretir_web --service-ports web
