@@ -12,7 +12,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Price)
 class PriceAdmin(admin.ModelAdmin):
-    list_display = ('value', 'created_at')
+    list_display = ('product', 'value', 'created_at')
 
 
 @admin.register(Ticket)

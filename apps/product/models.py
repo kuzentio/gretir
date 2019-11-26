@@ -14,6 +14,9 @@ class Product(models.Model):
     slug = AutoSlugField(populate_from='name', unique=True)
     thumb = models.ImageField(blank=True, upload_to=product_directory_path)
 
+    def __str__(self):
+        return self.name
+
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None, *args, **kwargs):
         self.slug = slugify(self.name, allow_unicode=True)
